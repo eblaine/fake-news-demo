@@ -1,0 +1,62 @@
+<link rel="import" href="feed-item.html">
+
+<dom-module id="feed-items">
+  <template>
+    <style>
+      :host {
+        display: block;
+        width: 60%;
+      }
+
+    </style>
+
+    <template is="dom-repeat" items="{{items}}">
+	  <feed-item markdown-id="[[item]]"></feed-item>
+	</template>
+
+  </template>
+
+  <script>
+    /**
+     * `feed-items`
+
+     */
+    class FeedItems extends Polymer.Element {
+      static get is() { return 'feed-items'; }
+      static get properties() {
+        return {
+          items: {
+          	type: Array
+          }
+        };
+      }
+
+      connectedCallback() {
+      	super.connectedCallback();
+      	this.items = ['cat', 'dog', 'text'];
+      	this.addEventListener('action', this._handleAction);
+      }
+
+      _updateItems(action, markdownId) {
+      	// TODO: this will be where the magic happens
+      	if (this.items[0] === 'cat') {
+      		this.items = ['dog', 'cat', 'text'];
+      	} else if (this.items[0] == 'dog') {
+      		this.items = ['cat', 'dog', 'text'];
+      	} else {
+      		this.items = ['text', 'dog', 'cat'];
+      	}
+      	 
+      }
+
+      _handleAction(event) {
+      	let action = event.detail.action;
+      	let markdownId = event.detail.markdownId;
+      	this._updateItems(action, markdownId)
+      }
+    }
+
+    window.customElements.define(FeedItems.is, FeedItems);
+  </script>
+</dom-module>
+

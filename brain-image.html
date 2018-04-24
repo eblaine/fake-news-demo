@@ -1,0 +1,71 @@
+<link rel="import" href="../wired-card.html">
+
+<dom-module id="brain-image">
+  <template>
+    <style>
+      :host {
+        /*align-self: center;*/
+        display: block;
+        width: 40%;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      wired-card {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+    </style>
+
+    <wired-card>
+      <h1>User Model</h1>
+      <p>Name: [[user.name]]</p>
+      <p>Gender: [[user.gender]]</p>
+      <p>Age: [[user.age]]</p>
+
+    </wired-card>
+
+    <img src="images/brain.png" />
+
+  </template>
+
+
+
+  <script>
+    /**
+     * `brain-image`
+
+     */
+    class BrainImage extends Polymer.Element {
+      static get is() { return 'brain-image'; }
+      static get properties() {
+        return {
+          user: {
+            type: Object,
+            value: {
+              name: 'Ellen',
+              gender: 'F',
+              age: 23
+            }
+          }
+        };
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+        console.log('connected');
+      }
+
+      updateImage(action, markdownId) {
+        // TODO: insert code to update image based on action/post
+        console.log('image would update');
+      }
+    }
+
+    window.customElements.define(BrainImage.is, BrainImage);
+  </script>
+</dom-module>
+

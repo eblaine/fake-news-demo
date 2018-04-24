@@ -1,0 +1,76 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../wired-card/wired-card.html">
+<link rel="import" href="../wired-button/wired-button.html">
+
+<dom-module id="feed-item">
+  <template>
+    <style>
+      :host {
+        display: inline-block;
+      }
+
+      wired-card {
+        width: 200px;
+        display: inline-block;
+        padding: 20px;
+        margin: 5px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      img {
+        width: 90%;
+      }
+
+    </style>
+    <wired-card>
+      <marked-element>
+        <div slot="markdown-html"></div>
+        <script type="text/markdown" src$="markdown/[[markdownId]].md"></script>
+      </marked-element>
+
+      <div class="buttons">
+        <wired-button text="Like" on-click="_clickHandler"></wired-button>
+        <wired-button on-click="_clickHandler" text="Comment"></wired-button>
+        <wired-button on-click="_clickHandler" text="Share"></wired-button>
+      </div>
+
+    </wired-card>
+
+  </template>
+
+  <script>
+    /**
+     * `feed-item`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class FeedItem extends Polymer.Element {
+      static get is() { return 'feed-item'; }
+      static get properties() {
+        return {
+          markdownId: {
+            type: String
+          }
+        };
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+      }
+
+      _clickHandler(event) {
+        let action = event.target.text.toLowerCase();
+        document.querySelector('feed-items').dispatchEvent(new CustomEvent('action', {detail: {action: event.target.text, markdownId: this.markdownId}, bubbles: true}));
+      }
+    }
+
+    window.customElements.define(FeedItem.is, FeedItem);
+  </script>
+</dom-module>
