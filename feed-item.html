@@ -67,7 +67,8 @@
 
       _clickHandler(event) {
         let action = event.target.text.toLowerCase();
-        document.querySelector('feed-items').dispatchEvent(new CustomEvent('action', {detail: {action: event.target.text, markdownId: this.markdownId}, bubbles: true}));
+        let feed = this.parentNode.host; // fuck yeah inline debugger less gooooooooo what is shadow dom why did google pay me so much
+        feed.dispatchEvent(new CustomEvent('action', {detail: {action: event.target.text, markdownId: this.markdownId}, bubbles: true}));
       }
     }
 

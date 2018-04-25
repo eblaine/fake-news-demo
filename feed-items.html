@@ -11,7 +11,7 @@
     </style>
 
     <template is="dom-repeat" items="{{items}}">
-	   <feed-item markdown-id="[[item]]"></feed-item>
+     <feed-item markdown-id="[[item]]"></feed-item>
     </template>
 
   </template>
@@ -26,33 +26,31 @@
       static get properties() {
         return {
           items: {
-          	type: Array
+            type: Array
           }
         };
       }
 
       connectedCallback() {
-      	super.connectedCallback();
-      	this.items = ['cat', 'dog', 'text'];
-      	this.addEventListener('action', this._handleAction);
+        super.connectedCallback();
+        this.items = ['cat', 'dog', 'text'];
+        this.addEventListener('action', this._handleAction);
       }
 
       _updateItems(action, markdownId) {
-      	// TODO: this will be where the magic happens
-      	if (this.items[0] === 'cat') {
-      		this.items = ['dog', 'cat', 'text'];
-      	} else if (this.items[0] == 'dog') {
-      		this.items = ['cat', 'dog', 'text'];
-      	} else {
-      		this.items = ['text', 'dog', 'cat'];
-      	}
-      	 
+        // TODO: this will be where the magic happens
+        if (this.items[0] === 'cat') {
+          this.items = ['dog', 'cat', 'text'];
+        } else if (this.items[0] == 'dog') {
+          this.items = ['cat', 'dog', 'text'];
+        } 
+         
       }
 
       _handleAction(event) {
-      	let action = event.detail.action;
-      	let markdownId = event.detail.markdownId;
-      	this._updateItems(action, markdownId)
+        let action = event.detail.action;
+        let markdownId = event.detail.markdownId;
+        this._updateItems(action, markdownId)
       }
     }
 
