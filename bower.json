@@ -6,7 +6,8 @@
     "wired-card": "^0.1.1",
     "marked-element": "^2.4.0",
     "wired-button": "^0.2.1",
-    "wired-icon-button": "^0.1.1"
+    "wired-icon-button": "^0.1.1",
+    "wired-input": "^0.2.0"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
