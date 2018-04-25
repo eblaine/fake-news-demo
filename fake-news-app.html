@@ -1,0 +1,74 @@
+<link rel="import" href="feed-items.html">
+<link rel="import" href="brain-image.html">
+<link rel="import" href="sign-up.html">
+
+
+<dom-module id="fake-news-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .container > * {
+        margin: 10px;
+      }
+
+      #app {
+        visibility: hidden;
+      }
+
+    </style>
+    <sign-up id="signup"></sign-up>
+
+    <div id="app" class="container">
+  	  <feed-items></feed-items>
+      <brain-image user="[[user]]"></brain-image>
+    </div>
+
+
+	</template>
+
+  </template>
+
+  <script>
+    /**
+     * `fake-news-app`
+
+     */
+    class FakeNewsApp extends Polymer.Element {
+      static get is() { return 'fake-news-app'; }
+      static get properties() {
+        return {
+          user: {
+          	type: Object,
+            value: {
+              name: 'Ellen',
+              gender: 'F',
+              age: 23
+            }
+          }
+        };
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+
+        this.addEventListener('signup', function (event) {
+          this.user = event.detail.user;
+          this.$.app.style.visibility = 'visible';
+          this.$.signup.style.display = 'none';
+        }.bind(this));
+      }
+
+    }
+
+    window.customElements.define(FakeNewsApp.is, FakeNewsApp);
+  </script>
+</dom-module>
+

@@ -1,0 +1,72 @@
+<link rel="import" href="../wired-card/wired-card.html">
+<link rel="import" href="../wired-button/wired-button.html">
+<link rel="import" href="../wired-input/wired-input.html">
+
+
+
+<dom-module id="sign-up">
+  <template>
+    <style>
+      :host {
+        display: block;
+        width: 50%;
+        margin: auto;
+        margin-top: 20px;
+      }
+
+      wired-card {
+      	height: 250px; 
+      	padding 10px;
+      	width: 100%;
+      }
+
+      wired-card > * {
+      	width: 95%;
+      }
+
+      wired-input {
+      	background-color: lightblue;
+      	margin: 7px;
+      }
+
+      wired-button {
+      	background-color: pink;
+      }
+
+    </style>
+
+    <wired-card class="form">
+    	<h1>Create your profile!</h1>
+  		<wired-input id="name" placeholder="Your name..."></wired-input>
+  		<wired-input id="gender" placeholder="Your gender..."></wired-input>
+  		<wired-input id="age" placeholder="Age" type="number"></wired-input>
+
+  		<wired-button id="button" text="Sign Up" on-click="_signUp"></wired-button>
+	</wired-card>
+
+  </template>
+
+  <script>
+    /**
+     * `sign-up`
+
+     */
+    class SignUp extends Polymer.Element {
+      static get is() { return 'sign-up'; }
+
+      _signUp() {
+      	let user = {
+      		name: this.$.name.value,
+      		gender: this.$.gender.value,
+      		age: this.$.age.value
+      	}
+
+      	document.querySelector('fake-news-app').dispatchEvent(new CustomEvent('signup', {detail: {user: user}, bubbles: true}));
+      }
+
+    }
+
+    window.customElements.define(SignUp.is, SignUp);
+  </script>
+</dom-module>
+

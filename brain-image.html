@@ -1,4 +1,4 @@
-<link rel="import" href="../wired-card.html">
+<link rel="import" href="../wired-card/wired-card.html">
 
 <dom-module id="brain-image">
   <template>
@@ -15,7 +15,7 @@
 
       wired-card {
         width: 100%;
-        margin-bottom: 20px;
+        padding: 10px;
       }
 
     </style>
@@ -26,9 +26,10 @@
       <p>Gender: [[user.gender]]</p>
       <p>Age: [[user.age]]</p>
 
+
+      <img src="images/brain.png" />
     </wired-card>
 
-    <img src="images/brain.png" />
 
   </template>
 
@@ -44,20 +45,11 @@
       static get properties() {
         return {
           user: {
-            type: Object,
-            value: {
-              name: 'Ellen',
-              gender: 'F',
-              age: 23
-            }
+            type: Object
           }
         };
       }
 
-      connectedCallback() {
-        super.connectedCallback();
-        console.log('connected');
-      }
 
       updateImage(action, markdownId) {
         // TODO: insert code to update image based on action/post
