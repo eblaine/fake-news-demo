@@ -1,6 +1,8 @@
-<link rel="import" href="../polymer/polymer-element.html">
-<link rel="import" href="../wired-card/wired-card.html">
-<link rel="import" href="../wired-button/wired-button.html">
+<link rel="import" href="/bower_components/polymer/polymer-element.html">
+<link rel="import" href="/bower_components/wired-card/wired-card.html">
+<link rel="import" href="/bower_components/wired-button/wired-button.html">
+<link rel="import" href="/bower_components/marked-element/marked-element.html">
+
 
 <dom-module id="feed-item">
   <template>
@@ -56,7 +58,8 @@
       static get properties() {
         return {
           markdownId: {
-            type: String
+            type: String,
+            value: 'cat'
           }
         };
       }
