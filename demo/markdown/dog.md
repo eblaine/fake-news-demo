@@ -1,5 +1,5 @@
 # Dog
 
-this is a dog
+Who doesn't love dogs?
 
 ![alt text](images/dog.jpg "Dog")
