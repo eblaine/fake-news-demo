@@ -27,8 +27,9 @@
       <p>Gender: [[user.gender]]</p>
       <p>Age: [[user.age]]</p>
 
-
-      <img src="images/brain.png" />
+      <p>Last Action: [[lastAction]]</p>
+      <p>Last ID: [[lastMarkdownId]]</p>
+      
     </wired-card>
 
 
@@ -52,10 +53,11 @@
       }
 
 
-      updateImage(action, markdownId) {
-        // TODO: insert code to update image based on action/post
-        console.log('image would update');
+      updateUser(action, markdownId) {
+        this.lastAction = action;
+        this.lastMarkdownId = markdownId;
       }
+
     }
 
     window.customElements.define(BrainImage.is, BrainImage);
