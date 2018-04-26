@@ -5,12 +5,24 @@ A Polymer 2.x application to teach people about how fake news spreads.
 ## Setup
 Visit https://www.polymer-project.org/2.0/start/install-2-0 and follow the installation instructions for installing polymer-cli. 
 
+Then 
+```bower install```
+
 ## Development
 Run
 
-```polymer serve```
+```firebase serve --project cs-377i-fake-news```
 
-and visit the elements URL, which is http://127.0.0.1:8081/components/feed-item/ for me. 
+and visit localhost:5000. You may be asked to authenticate first. 
+
+To install new bower things, (e.g. a-bower-package):
+```bower install a-bower-package --save```
+
+## Deployment
+
+```firebase deploy --project cs-377i-fake-news```
+
+Deployment config is in firebase.json. Right now it just sends the whole current directory, since we don't really have a build process. Hence, I don't recommend viewing this app on your phone outside of wifi range! 
 
 ## Layout
 The page you see should be demo/index.html. 
