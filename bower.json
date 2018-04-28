@@ -7,7 +7,8 @@
     "marked-element": "^2.4.0",
     "wired-button": "^0.2.1",
     "wired-icon-button": "^0.1.1",
-    "wired-input": "^0.2.0"
+    "wired-input": "^0.2.0",
+    "highcharts-chart": "avdaredevil/highcharts-chart#^2.0.1"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
@@ -15,6 +16,7 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
   },
   "resolutions": {
-    "polymer": "^2.0.0"
+    "polymer": "1.9 - 2",
+    "webcomponentsjs": "^1.0.0"
   }
 }

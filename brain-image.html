@@ -1,4 +1,5 @@
 <link rel="import" href="/bower_components/wired-card/wired-card.html">
+<link rel="import" href="bower_components/highcharts-chart/highcharts-chart.html">
 
 <dom-module id="brain-image">
   <template>
@@ -26,9 +27,7 @@
       <p>Name: [[user.name]]</p>
       <p>Gender: [[user.gender]]</p>
       <p>Age: [[user.age]]</p>
-
-      <p>Last Action: [[lastAction]]</p>
-      <p>Last ID: [[lastMarkdownId]]</p>
+      <highcharts-chart id="chart" type="pie" data="[[data]]" color-by-point="true" title="[[user.name]]'s Interests"></highcharts-chart>
       
     </wired-card>
 
@@ -52,10 +51,18 @@
         };
       }
 
+      connectedCallback() {
+        super.connectedCallback();
+        this.data = [{name: 'Liberal', y: 30}, {name: 'Conservative', y: 30}, {name: 'Animals', y: 40}];
+
+      }
+
 
       updateUser(action, markdownId) {
         this.lastAction = action;
         this.lastMarkdownId = markdownId;
+        
+        this.$.chart.setData([{name: 'Liberal', y: 20}, {name: 'Conservative', y: 40}, {name: 'Animals', y: 40}])
       }
 
     }
