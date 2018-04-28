@@ -1,4 +1,5 @@
 <link rel="import" href="feed-item.html">
+<link rel="import" href="/bower_components/iron-ajax/iron-ajax.html">
 
 <dom-module id="feed-items">
   <template>
@@ -11,8 +12,10 @@
     </style>
 
     <template is="dom-repeat" items="{{items}}">
-     <feed-item markdown-id="[[item]]"></feed-item>
+     <feed-item item="[[item]]" num-categories="[[numCategories]]"></feed-item>
     </template>
+
+    <iron-ajax auto url="../data.json" on-response="initItems">
 
   </template>
 
@@ -27,30 +30,21 @@
         return {
           items: {
             type: Array
+          },
+          numCategories: {
+            type: Number,
+            value: 3
           }
         };
       }
 
-      connectedCallback() {
-        super.connectedCallback();
-        this.items = ['cat', 'dog', 'text', 'inauguration'];
-        this.addEventListener('action', this._handleAction);
+      initItems(response, ajaxElem) {
+        let data = ajaxElem.response;
+        this.set('items', data);
       }
 
-      _updateItems(action, markdownId) {
-        // TODO: this will be where the magic happens
-        if (this.items[0] === 'cat') {
-          this.items = ['dog', 'cat', 'text'];
-        } else if (this.items[0] == 'dog') {
-          this.items = ['cat', 'dog', 'text'];
-        } 
-         
-      }
-
-      _handleAction(event) {
-        let action = event.detail.action;
-        let markdownId = event.detail.markdownId;
-        this._updateItems(action, markdownId);
+      updateItems(likelihoods) {
+        // TODO: use likelihoods to choose cards via weighted random selection
       }
     }
 

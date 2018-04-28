@@ -58,11 +58,9 @@
       }
 
 
-      updateUser(action, markdownId) {
-        this.lastAction = action;
-        this.lastMarkdownId = markdownId;
-        
-        this.$.chart.setData([{name: 'Liberal', y: 20}, {name: 'Conservative', y: 40}, {name: 'Animals', y: 40}])
+      updateUser(user) {
+        this.user = user;
+        this.$.chart.setData(user.likelihoods);
       }
 
     }

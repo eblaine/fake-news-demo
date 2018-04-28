@@ -33,7 +33,7 @@
     <wired-card>
       <marked-element>
         <div slot="markdown-html"></div>
-        <script type="text/markdown" src$="markdown/[[markdownId]].md"></script>
+        <script type="text/markdown" src$="markdown/[[item.markdownId]].md"></script>
       </marked-element>
 
       <div class="buttons">
@@ -59,9 +59,8 @@
       static get is() { return 'feed-item'; }
       static get properties() {
         return {
-          markdownId: {
-            type: String,
-            value: 'cat'
+          item: {
+            type: Object
           }
         };
       }
@@ -72,8 +71,10 @@
 
       _clickHandler(event) {
         let action = event.target.text.toLowerCase();
-        let feed = this.parentNode.host; // fuck yeah inline debugger less gooooooooo what is shadow dom why did google pay me so much
-        feed.dispatchEvent(new CustomEvent('action', {detail: {action: action, markdownId: this.markdownId}, bubbles: true}));
+        let feed = this.parentNode.host; 
+        let likelihoodIncrease = this.item.likelihoodIncrease;
+        feed.dispatchEvent(new CustomEvent('action', {detail: {likelihoodIncrease: likelihoodIncrease, 
+          category: this.item.category}, bubbles: true}));
       }
     }
 
