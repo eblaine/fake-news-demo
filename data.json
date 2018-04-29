@@ -1,0 +1,82 @@
+[
+	{
+		"markdownId": "bernie",
+		"category": "Liberal",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "bird",
+		"category": "Liberal",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "cat",
+		"category": "Animals",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "democratfavor",
+		"category": "Liberal",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "dog",
+		"category": "Animals",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "doggos",
+		"category": "Animals",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "election",
+		"category": "Conservative",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "hillary",
+		"category": "Liberal",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "hillaryagain",
+		"category": "Liberal",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "inauguration",
+		"category": "Conservative",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "lesspoliticallyinclined",
+		"category": "Conservative",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "morecats",
+		"category": "Animals",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "probablydemocrat",
+		"category": "Liberal",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "probablyrepublican",
+		"category": "Conservative",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "rep",
+		"category": "Conservative",
+		"likelihoodIncrease": 0.1
+    },
+    {
+		"markdownId": "republican",
+		"category": "Conservative",
+		"likelihoodIncrease": 0.1
+    }
+]
