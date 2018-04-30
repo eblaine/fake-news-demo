@@ -2,81 +2,81 @@
 	{
 		"markdownId": "bernie",
 		"category": "Liberal",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "bird",
 		"category": "Liberal",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "cat",
 		"category": "Animals",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "democratfavor",
 		"category": "Liberal",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "dog",
 		"category": "Animals",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "doggos",
 		"category": "Animals",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "election",
 		"category": "Conservative",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "hillary",
 		"category": "Liberal",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "hillaryagain",
 		"category": "Liberal",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "inauguration",
 		"category": "Conservative",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "lesspoliticallyinclined",
 		"category": "Conservative",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "morecats",
 		"category": "Animals",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "probablydemocrat",
 		"category": "Liberal",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "probablyrepublican",
 		"category": "Conservative",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "rep",
 		"category": "Conservative",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     },
     {
 		"markdownId": "republican",
 		"category": "Conservative",
-		"likelihoodIncrease": 0.1
+		"likelihoodIncrease": 10
     }
 ]
