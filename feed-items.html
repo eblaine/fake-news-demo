@@ -44,25 +44,25 @@
       }
 
       updateItems(likelihoods) {
-        let items = [];
+        let newItems = [];
         for (let i = 0; i < this.numCategories; i++) {
-          let card = this._weightedRandomCard(likelihoods);
-          while (items.includes(card)) { // no repeats
-            card = this._weightedRandomCard(likelihoods);
+          let card = this.__weightedRandomCard(likelihoods);
+          while (this.__cardIsRepeat(card, newItems)) { // no repeats
+            card = this.__weightedRandomCard(likelihoods);
           }
-          items.push(card);
+          newItems.push(card);
         }
-        this.set('items', items);
+        this.set('items', newItems);
       }
 
-      _weightedRandomCard(likelihoods) {
-        let category = this._weightedRandomCategory(likelihoods);
+      __weightedRandomCard(likelihoods) {
+        let category = this.__weightedRandomCategory(likelihoods);
         let choices = this.metadata.filter(item => item.category === category);
         let randomIndex =  Math.floor(Math.random() * choices.length);
         return choices[randomIndex];
       }
 
-      _weightedRandomCategory(likelihoods) {
+      __weightedRandomCategory(likelihoods) {
         let randomPercentage = Math.floor(Math.random() * 100);
         let accumulator = 0;
         for (let i = 0; i < likelihoods.length; i++) {
@@ -72,6 +72,13 @@
           }
         }
         return likelihoods[likelihoods.length - 1];
+      }
+
+      __cardIsRepeat(card, itemsList) {
+        if (!this.items) {
+          return itemsList.includes(card);
+        }
+        return this.items.includes(card) || itemsList.includes(card);
       }
     }
 
