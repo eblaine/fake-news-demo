@@ -15,7 +15,7 @@
      <feed-item item="[[item]]" num-categories="[[numCategories]]"></feed-item>
     </template>
 
-    <iron-ajax auto url="../data.json" on-response="initItems">
+    <iron-ajax auto url="../data.json" on-response="initMetadata">
 
   </template>
 
@@ -38,13 +38,40 @@
         };
       }
 
-      initItems(response, ajaxElem) {
+      initMetadata(response, ajaxElem) {
         let data = ajaxElem.response;
-        this.set('items', data);
+        this.metadata = data;
       }
 
       updateItems(likelihoods) {
-        // TODO: use likelihoods to choose cards via weighted random selection
+        let items = [];
+        for (let i = 0; i < this.numCategories; i++) {
+          let card = this._weightedRandomCard(likelihoods);
+          while (items.includes(card)) { // no repeats
+            card = this._weightedRandomCard(likelihoods);
+          }
+          items.push(card);
+        }
+        this.set('items', items);
+      }
+
+      _weightedRandomCard(likelihoods) {
+        let category = this._weightedRandomCategory(likelihoods);
+        let choices = this.metadata.filter(item => item.category === category);
+        let randomIndex =  Math.floor(Math.random() * choices.length);
+        return choices[randomIndex];
+      }
+
+      _weightedRandomCategory(likelihoods) {
+        let randomPercentage = Math.floor(Math.random() * 100);
+        let accumulator = 0;
+        for (let i = 0; i < likelihoods.length; i++) {
+          accumulator += likelihoods[i].y;
+          if (randomPercentage < accumulator) {
+            return likelihoods[i].name;
+          }
+        }
+        return likelihoods[likelihoods.length - 1];
       }
     }
 

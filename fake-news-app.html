@@ -84,6 +84,7 @@
               }
             }
           });
+
           this.$.brain.updateUser(this.user);
           this.$.items.updateItems(this.user.likelihoods);
       }
@@ -93,6 +94,7 @@
           this.user.likelihoods = [{name: 'Liberal', y: 30}, {name: 'Conservative', y: 30}, {name: 'Animals', y: 40}];
           this.$.app.style.visibility = 'visible';
           this.$.signup.style.display = 'none';
+          this.$.items.updateItems(this.user.likelihoods);
       }
 
     }
