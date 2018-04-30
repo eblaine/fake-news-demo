@@ -1,7 +1,8 @@
 <link rel="import" href="feed-items.html">
 <link rel="import" href="brain-image.html">
 <link rel="import" href="sign-up.html">
-
+<link rel="import" href="/bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="/bower_components/wired-button/wired-button.html">
 
 <dom-module id="fake-news-app">
   <template>
@@ -23,6 +24,15 @@
         visibility: hidden;
       }
 
+      .modal-button {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      wired-button {
+        background-color: pink;        
+      }
+      
     </style>
     <sign-up id="signup"></sign-up>
 
@@ -30,6 +40,16 @@
   	  <feed-items id="items"></feed-items>
       <brain-image id="brain" user="[[user]]"></brain-image>
     </div>
+
+    <paper-dialog id="welcome" modal>
+      <marked-element>
+        <div slot="markdown-html"></div>
+        <script type="text/markdown" src="markdown/welcome.md"></script>
+      </marked-element>
+      <div class="modal-button">
+        <wired-button dialog-confirm autofocus text="Get started!"></wired-button>
+      </div>
+    </paper-dialog>
 
 
 	</template>
@@ -60,8 +80,8 @@
         super.connectedCallback();
 
         this.addEventListener('signup', this._handleSignup.bind(this));
-
         this.$.app.addEventListener('action', this._handleAction.bind(this));
+        this.$.welcome.open();
       }
 
       _handleAction (event) {
