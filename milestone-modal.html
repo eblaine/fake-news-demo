@@ -1,0 +1,61 @@
+
+<link rel="import" href="/bower_components/paper-dialog/paper-dialog.html">
+
+<dom-module id="milestone-modal">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      .modal-button {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      wired-button {
+        background-color: pink;        
+      }
+
+      paper-dialog {
+          box-shadow: -1px 1px 25px 29px rgba(0,0,0,0.35);
+          margin: auto;
+      }
+      
+    </style>
+
+
+    
+    <paper-dialog id="modal">
+      <marked-element>
+        <div slot="markdown-html"></div>
+        <script type="text/markdown" src$="markdown/[[markdownSource]]"></script>
+      </marked-element>
+    </paper-dialog>
+
+  </template>
+
+  <script>
+    /**
+     * `fake-news-app`
+
+     */
+    class MilestoneModal extends Polymer.Element {
+      static get is() { return 'milestone-modal'; }
+      static get properties() {
+        return {
+          markdownSource: {
+          	type: String
+          }
+        };
+      }
+
+      open() {
+          this.$.modal.open();
+      }
+    }
+
+    window.customElements.define(MilestoneModal.is, MilestoneModal);
+  </script>
+</dom-module>
+
+
