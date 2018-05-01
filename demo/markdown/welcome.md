@@ -2,7 +2,7 @@
 
 Welcome to our Echo Chamber simulator! 
 
-An echo chamber is a metaphorical description, where beliefs and ideas get reinforced
+An **echo chamber** is a metaphorical description, where beliefs and ideas get reinforced
 because of continuous exposure and repetition in a system, much like
 how sound may echo in a hollow chamber.  
 

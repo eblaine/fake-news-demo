@@ -63,12 +63,12 @@
     </div>
 
     <milestone-modal id="welcome" markdown-source="welcome.md"></milestone-modal>
+    <milestone-modal id="firstclick" markdown-source="first-click.md"></milestone-modal>    
     <milestone-modal id="zero" markdown-source="first-zero.md"></milestone-modal>
     <milestone-modal id="fake" markdown-source="fake.md"></milestone-modal>
     <milestone-modal id="intro" markdown-source="intro.md"></milestone-modal>
     <milestone-modal id="anotherfake" markdown-source="anotherfake.md"></milestone-modal>
     <milestone-modal id="finishModal" markdown-source="finish.md"></milestone-modal>
-    
 
 	</template>
 
@@ -138,6 +138,7 @@
             }
           }
         }.bind(this));
+        this._checkFirstClick();
 
         this.$.brain.updateUser(this.user);
         this.$.items.updateItems(this.user.likelihoods);
@@ -154,6 +155,13 @@
 
       _openIntro() {
         this.$.intro.open();
+      }
+
+      _checkFirstClick() {
+        if (!this._clickedOnce) {
+          this.$.firstclick.open();
+        }
+        this._clickedOnce = true;
       }
 
       _openZero() {
