@@ -31,17 +31,19 @@
         right: 40px;
       }
 
-      #buttons {
-        font-family: 'futurahandwrittenmedium', sans-serif;
-        visibility: hidden; 
-      }
-
       #restart {
         background-color: lightgray;
       }
 
       #finish {
+        font-family: 'futurahandwrittenmedium', sans-serif;
+        visibility: hidden; 
         background-color: lightblue;
+        position: absolute;
+        right: 50px;
+        bottom: 50px;
+        font-size: 70px; 
+        z-index: 3;
       }
 
       milestone-modal {
@@ -50,10 +52,7 @@
 
     </style>
 
-    <div id="buttons">
-      <!-- <wired-button id="restart" text="Restart"></wired-button> -->
-      <wired-button text="Finish" id="finish"></wired-button>
-    </div>
+    <wired-button text="Finish" id="finish"></wired-button>
 
     <sign-up id="signup"></sign-up>
 
@@ -179,12 +178,13 @@
       _incrementActions() {
         this._numActions += 1;
         if (this._numActions >= this._minActions) {
-          this.$.buttons.style.visibility = 'visible';
+          this.$.finish.style.visibility = 'visible';
         }
       }
 
       _openFinish() {
         this.$.finishModal.open();
+        this.$.finish.style.visibility = 'hidden';
       }
 
     }
