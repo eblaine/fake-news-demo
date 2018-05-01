@@ -1,6 +1,7 @@
 <link rel="import" href="/bower_components/wired-card/wired-card.html">
 <link rel="import" href="/bower_components/wired-button/wired-button.html">
 <link rel="import" href="/bower_components/wired-input/wired-input.html">
+<link rel="stylesheet" type="text/css" href="/demo/fonts/fonts.css" />
 
 
 <dom-module id="sign-up">
@@ -14,8 +15,7 @@
       }
 
       h1 {
-        font-family: 'Roboto', sans-serif;
-        font-weight: bolder;
+        font-family: 'futurahandwrittenmedium', sans-serif;
         text-align: center;
       }
 
@@ -30,22 +30,22 @@
       }
 
       wired-input {
-        font-family: 'Roboto', sans-serif;
-        font-weight: normal;
+        font-family: 'futurahandwrittenmedium', sans-serif;
       	background-color: lightblue;
       	margin: 7px;
       }
 
       wired-button {
-        font-family: 'Roboto', sans-serif;
-        font-weight: bold;
-      	background-color: pink;
+        font-family: 'futurahandwrittenmedium', sans-serif;
+        font-weight: 600;
+        background-color: pink;
+        box-shadow: 10px;
       }
 
     </style>
 
     <wired-card class="form">
-    	<h1>Create your profile!</h1>
+    	<h1>CREATE YOUR PROFILE!</h1>
   		<wired-input id="name" placeholder="Your name..."></wired-input>
   		<wired-input id="gender" placeholder="Your gender..."></wired-input>
   		<wired-input id="age" placeholder="Age" type="number"></wired-input>
