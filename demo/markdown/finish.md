@@ -9,3 +9,10 @@ and "fake news" in general, our newsfeeds can be manipulated in ways we might no
 
 Keep that in mind, and stay mindful of the content you interact with and how that 
 might affect your social media experience! 
+
+Want to play with the simulation again? Refresh the page!
+
+We hope you've been able to learn something from us!
+
+Best,
+Ellen, Julia, and Miguel

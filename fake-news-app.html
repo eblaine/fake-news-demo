@@ -65,6 +65,7 @@
     <milestone-modal id="welcome" markdown-source="welcome.md"></milestone-modal>
     <milestone-modal id="zero" markdown-source="first-zero.md"></milestone-modal>
     <milestone-modal id="fake" markdown-source="fake.md"></milestone-modal>
+    <milestone-modal id="intro" markdown-source="intro.md"></milestone-modal>
     <milestone-modal id="anotherfake" markdown-source="anotherfake.md"></milestone-modal>
     <milestone-modal id="finishModal" markdown-source="finish.md"></milestone-modal>
     
@@ -148,6 +149,11 @@
           this.$.app.style.visibility = 'visible';
           this.$.signup.style.display = 'none';
           this.$.items.updateItems(this.user.likelihoods);
+          this._openIntro();
+      }
+
+      _openIntro() {
+        this.$.intro.open();
       }
 
       _openZero() {
