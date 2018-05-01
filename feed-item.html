@@ -14,13 +14,24 @@
       wired-card {
         font-family: 'futurahandwrittenmedium', sans-serif;
         align-content: center;
-        width: 200px;
+        width: 200px; 
+        height: 250px; 
         display: inline-block;
         padding: 20px;
         margin: 5px;
+        position: relative;
+      }
+
+      marked-element {
+        position: absolute;
+        top: 10px;
       }
 
       .buttons {
+        position: absolute;
+        bottom: 10px;
+        margin: auto;
+        width: 80%;
         display: flex;
         justify-content: space-between;
       }
@@ -30,8 +41,8 @@
       }
 
     </style>
-    <wired-card>
-      <marked-element>
+    <wired-card id="card">
+      <marked-element id="marked">
         <div slot="markdown-html"></div>
         <script type="text/markdown" src$="markdown/[[item.markdownId]].md"></script>
       </marked-element>
@@ -61,12 +72,17 @@
         return {
           item: {
             type: Object
+          },
+          markdownId: {
+            type: String,
+            observer: '_markdownIdChanged'
           }
         };
       }
 
       connectedCallback() {
-        super.connectedCallback();
+        super.connectedCallback(); 
+        this._updateCardStyles();
       }
 
       _clickHandler(event) {
@@ -75,6 +91,21 @@
         let likelihoodIncrease = this.item.likelihoodIncrease;
         feed.dispatchEvent(new CustomEvent('action', {detail: {likelihoodIncrease: likelihoodIncrease, 
           category: this.item.category}, bubbles: true}));
+      }
+
+      _markdownIdChanged(newId, oldId) {
+        this._updateCardStyles();
+      }
+
+      _updateCardStyles() {
+        // TODO (ellen): actually implement this
+        // debugger;
+        // let markedHeight = this.$.marked.style.height;
+        // let markedWidth = this.$.marked.style.width;
+        let markedHeight = '400px';
+        let markedWidth = '260px';
+        this.$.card.updateStyles({'height': markedHeight});
+        this.$.card.updateStyles({'width': markedWidth});     
       }
     }
 
