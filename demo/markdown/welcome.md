@@ -16,3 +16,5 @@ views your interests and how that changes your feed. We're being a bit more
 transparent than current social media sites.
 
 So, the first step is to sign up and create a profile. Let's get started!
+
+*Tip:* If this isn't displaying properly, give it a refresh!
