@@ -14,5 +14,4 @@ Want to play with the simulation again? Refresh the page!
 
 We hope you've been able to learn something from us!
 
-Best,
 Ellen, Julia, and Miguel
