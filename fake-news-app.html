@@ -62,6 +62,8 @@
 
     <milestone-modal id="welcome" markdown-source="welcome.md"></milestone-modal>
     <milestone-modal id="zero" markdown-source="first-zero.md"></milestone-modal>
+    <milestone-modal id="fake" markdown-source="fake.md"></milestone-modal>
+    <milestone-modal id="anotherfake" markdown-source="anotherfake.md"></milestone-modal>
     <milestone-modal id="finishModal" markdown-source="finish.md"></milestone-modal>
     
 
@@ -108,6 +110,14 @@
 
         this.user.likelihoods = this.user.likelihoods.map(function(item) {
           if (item.name === category) {
+            if (likelihoodIncrease > 10) {
+              if (!this._foundFake) {
+                this._foundFake = true;
+                this._openFake();
+              } else {
+                this._openAnotherFake();
+              }
+            }
             if (item.y + likelihoodIncrease < 100) {
               return {name: item.name, y: item.y + likelihoodIncrease};
             } else {
@@ -140,6 +150,14 @@
 
       _openZero() {
         this.$.zero.open();
+      }
+
+      _openFake() {
+        this.$.fake.open();
+      }
+
+      _openAnotherFake() {
+        this.$.anotherfake.open();
       }
 
       _incrementActions() {

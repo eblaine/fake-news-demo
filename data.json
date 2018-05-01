@@ -32,7 +32,7 @@
     {
 		"markdownId": "election",
 		"category": "Conservative",
-		"likelihoodIncrease": 10
+		"likelihoodIncrease": 20
     },
     {
 		"markdownId": "hillary",
@@ -42,12 +42,12 @@
     {
 		"markdownId": "hillaryagain",
 		"category": "Liberal",
-		"likelihoodIncrease": 10
+		"likelihoodIncrease": 20
     },
     {
 		"markdownId": "inauguration",
 		"category": "Conservative",
-		"likelihoodIncrease": 10
+		"likelihoodIncrease": 20
     },
     {
 		"markdownId": "lesspoliticallyinclined",
