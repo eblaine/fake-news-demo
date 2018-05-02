@@ -5,8 +5,10 @@
   <template>
     <style>
       :host {
-        display: block;
-        width: 50%;
+        display: flex;
+        flex-flow: row wrap;
+        width: 60%;
+        height: 100%;
       }
 
     </style>
@@ -45,7 +47,7 @@
 
       updateItems(likelihoods) {
         let newItems = [];
-        for (let i = 0; i < this.numCategories; i++) {
+        for (let i = 0; i < this.numCategories + 1; i++) {    // 4 cards 
           let card = this.__weightedRandomCard(likelihoods);
           while (this.__cardIsRepeat(card, newItems)) { // no repeats
             card = this.__weightedRandomCard(likelihoods);

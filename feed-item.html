@@ -14,11 +14,11 @@
       wired-card {
         font-family: 'futurahandwrittenmedium', sans-serif;
         align-content: center;
-        width: 200px; 
+        width: 300px; 
         height: 250px; 
-        display: inline-block;
+        display: flex;
         padding: 20px;
-        margin: 5px;
+        margin: 2px;
         position: relative;
       }
 
@@ -99,10 +99,10 @@
       }
 
       _updateCardStyles() {
-        let markedHeight = '430px';
-        let markedWidth = '260px';
+        let markedHeight = '400px';
+        // let markedWidth = '300px';
         this.$.card.updateStyles({'height': markedHeight});
-        this.$.card.updateStyles({'width': markedWidth});     
+        // this.$.card.updateStyles({'width': markedWidth});     
       }
     }
 

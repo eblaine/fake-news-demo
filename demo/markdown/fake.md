@@ -1,6 +1,6 @@
 # Ahhh!
 
-You just interacted with a "fake news" post, which doubled the skew towards that interest! 
+You just interacted with a **fake news** post, which doubled the skew towards that interest! 
 
 With this, social media sites realize that you are likely to interact with 
 posts that align with your views and interests, even in the case where the posts
