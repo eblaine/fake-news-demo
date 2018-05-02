@@ -91,7 +91,7 @@
         let feed = this.parentNode.host; 
         let likelihoodIncrease = this.item.likelihoodIncrease;
         feed.dispatchEvent(new CustomEvent('action', {detail: {likelihoodIncrease: likelihoodIncrease, 
-          category: this.item.category}, bubbles: true}));
+          category: this.item.category, action: action}, bubbles: true}));
       }
 
       _markdownIdChanged(newId, oldId) {
@@ -99,10 +99,6 @@
       }
 
       _updateCardStyles() {
-        // TODO (ellen): actually implement this
-        // debugger;
-        // let markedHeight = this.$.marked.style.height;
-        // let markedWidth = this.$.marked.style.width;
         let markedHeight = '430px';
         let markedWidth = '260px';
         this.$.card.updateStyles({'height': markedHeight});

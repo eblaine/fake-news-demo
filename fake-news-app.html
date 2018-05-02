@@ -106,8 +106,9 @@
 
       _handleAction (event) {
         this._incrementActions();
-        let likelihoodIncrease = event.detail.likelihoodIncrease;
-        let likelihoodDecrease = event.detail.likelihoodIncrease / (this.user.likelihoods.length - 1);
+        let multiplier = this.__getMultiplier(event.detail.action);        
+        let likelihoodIncrease = multiplier * event.detail.likelihoodIncrease;
+        let likelihoodDecrease = likelihoodIncrease / (this.user.likelihoods.length - 1);
         let category = event.detail.category;
 
         this.user.likelihoods = this.user.likelihoods.map(function(item) {
@@ -185,6 +186,16 @@
       _openFinish() {
         this.$.finishModal.open();
         this.$.finish.style.visibility = 'hidden';
+      }
+
+      __getMultiplier(action) {
+        if (action === 'like') {
+          return 0.25;
+        } else if (action === 'comment') {
+          return 0.5;
+        } else {
+          return 1;
+        }
       }
 
     }
